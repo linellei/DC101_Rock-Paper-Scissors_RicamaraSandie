@@ -1,0 +1,123 @@
+/* ================================
+   Global Reset
+   Remove default margins/padding
+   and set box-sizing for consistency
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Body Styling
+   Background gradient, font, and
+   center content vertically/horizontally
+================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* ================================
+   Game Container Card
+   Glassmorphism effect with blur,
+   rounded corners, and shadow
+================================= */
+.game-container {
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+    backdrop-filter: blur(10px); /* blur effect */
+    border-radius: 15px;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out; /* entry animation */
+}
+
+    /* ================================
+   Title Styling
+   Uppercase, spacing, and size
+================================= */
+    .game-container h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+/* ================================
+   Choices Section
+   Flex layout for buttons
+================================= */
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+    /* ================================
+   Choice Buttons
+   Circular buttons with hover effects
+================================= */
+    .choices button {
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        padding: 15px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .choices button:hover {
+            transform: scale(1.15); /* grow on hover */
+            box-shadow: 0 0 15px rgba(255,255,255,0.8); /* glow effect */
+        }
+
+    /* ================================
+   Choice Images
+   Size of rock/paper/scissors icons
+================================= */
+    .choices img {
+        width: 80px;
+        height: 80px;
+    }
+
+/* ================================
+   Results Section
+   Text styling for choices and winner
+================================= */
+.results {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* Winner text highlighted */
+#winner {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffeb3b; /* bright yellow */
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+/* ================================
+   Animations
+   Fade-in effect for game container
+================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
